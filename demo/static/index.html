@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZecPy Live · light server view</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="/" aria-label="ZecPy Live">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2.5v3M12 18.5v3M7 6.5h10L7 17.5h10" />
+      </svg>
+      <span class="brand-name">ZecPy Live</span>
+    </a>
+    <span class="scope">devnet · regtest · block <span class="num" id="height">-</span></span>
+    <span class="conn" id="conn">Connecting</span>
+    <button class="ghost" id="reset" type="button">Reset screen</button>
+  </header>
+
+  <main class="canvas">
+    <div class="title-row">
+      <h1>What the light server learns</h1>
+      <p class="finding" id="finding">Run a scene. Every request the server receives appears on the right as it arrives.</p>
+    </div>
+
+    <div class="grid">
+      <section class="col-left" aria-label="Scenes">
+        <div class="panel">
+          <div class="panel-head"><h2>Scenes</h2><span class="meta">real ZecPy on a local chain</span></div>
+          <ul class="scenes" id="scenes"></ul>
+        </div>
+        <div class="panel narration">
+          <div class="panel-head"><h2 id="narration-title">Narration</h2><span class="meta num" id="narration-time"></span></div>
+          <ol class="steps" id="steps">
+            <li class="empty">No scene has run yet.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="col-right" aria-label="Light server view">
+        <div class="kpis panel" id="kpis">
+          <div class="kpi lead"><span class="label">ZecPy, identifying</span><span class="value num" id="k-z-id">0</span><span class="sub" id="k-z-sub">of 0 requests, memo fetch aside</span></div>
+          <div class="kpi lead"><span class="label">zcash-devtool, identifying</span><span class="value num" id="k-d-id">0</span><span class="sub" id="k-d-sub">of 0 requests</span></div>
+          <div class="kpi"><span class="label">Memo fetch, opt-in</span><span class="value num" id="k-memo">-</span><span class="sub" id="k-memo-sub">not run</span></div>
+          <div class="kpi"><span class="label">Broadcasts</span><span class="value num" id="k-bc">0</span><span class="sub">transactions published</span></div>
+        </div>
+
+        <div class="panel memo" id="memo">
+          <div class="panel-head">
+            <h2>Memo fetch, as the server saw it</h2>
+            <button class="ghost" id="reveal" type="button" aria-pressed="false" disabled>Reveal ours, on this screen only</button>
+          </div>
+          <p class="memo-note" id="memo-note">No memo fetched yet. The memo scene fetches each payment whose memo is unknown, among 7 decoys.</p>
+          <ul class="batch" id="batch"></ul>
+        </div>
+
+        <div class="panel feed">
+          <div class="panel-head">
+            <h2>Requests received</h2>
+            <div class="tabs" role="tablist" aria-label="Wallet">
+              <button role="tab" aria-selected="true" data-actor="all">All</button>
+              <button role="tab" aria-selected="false" data-actor="zecpy">ZecPy</button>
+              <button role="tab" aria-selected="false" data-actor="devtool">zcash-devtool</button>
+            </div>
+          </div>
+          <div class="feed-scroll">
+            <table class="ledger">
+              <thead><tr><th class="num">Time</th><th>Wallet</th><th>Request</th><th>What it asks for</th><th>Server learns</th></tr></thead>
+              <tbody id="ledger"><tr class="empty-row"><td colspan="5">Nothing received yet.</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1183 @@
+[
+{
+"type": "chain",
+"t": 1792912839.0248816,
+"height": 2280
+},
+{
+"type": "scene",
+"t": 1792912839.0249836,
+"scene": "checkout",
+"state": "start"
+},
+{
+"type": "step",
+"t": 1792912839.025011,
+"scene": "checkout",
+"text": "Shop backend creates a ZecPy wallet",
+"status": "run"
+},
+{
+"type": "audit",
+"t": 1792912839.061335,
+"actor": "zecpy",
+"method": "GetLatestBlock",
+"label": "public",
+"reason": "chain tip, asked by every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912839.10148,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 1: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 1"
+},
+{
+"type": "step",
+"t": 1792912841.065091,
+"scene": "checkout",
+"text": "Shop wallet ready: no seed on disk, 24 words handed to the caller once",
+"status": "ok"
+},
+{
+"type": "step",
+"t": 1792912841.1048684,
+"scene": "checkout",
+"text": "Invoice order-77 for 0.0015 ZEC: its own shielded address",
+"status": "ok",
+"address": "uregtest14c6vxyvwdf8mdz6gcchchnc2h3za3u3er62hlztd0dc0eyafx6ds4qale3en7uhce6pxdu6wtsetm57jc3dchj9qp25hpd9urfv4s4zlh20f224emzpp807luwvmnrf9uk5hn266qc65czfj6p7whw6f5pph8lnwaacqzq5uyqgfy95x",
+"uri": "zcash:uregtest14c6vxyvwdf8mdz6gcchchnc2h3za3u3er62hlztd0dc0eyafx6ds4qale3en7uhce6pxdu6wtsetm57jc3dchj9qp25hpd9urfv4s4zlh20f224emzpp807luwvmnrf9uk5hn266qc65czfj6p7whw6f5pph8lnwaacqzq5uyqgfy95x?amount=0.0015&message=order-77"
+},
+{
+"type": "step",
+"t": 1792912841.104927,
+"scene": "checkout",
+"text": "Customer pays from their own wallet",
+"status": "run"
+},
+{
+"type": "step",
+"t": 1792912854.7807937,
+"scene": "checkout",
+"text": "Payment mined. The shop matches it by address during trial decryption: no memo, no lookup",
+"status": "ok"
+},
+{
+"type": "audit",
+"t": 1792912854.7835186,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912854.7983725,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912854.8082764,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912854.8356874,
+"actor": "zecpy",
+"method": "GetLatestTreeState",
+"label": "public",
+"reason": "tree state at the tip",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912854.8708858,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 1: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 1"
+},
+{
+"type": "audit",
+"t": 1792912854.877904,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2 to 999"
+},
+{
+"type": "audit",
+"t": 1792912857.3087091,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 999: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 999"
+},
+{
+"type": "audit",
+"t": 1792912857.3380687,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 1000 to 1999"
+},
+{
+"type": "audit",
+"t": 1792912859.45896,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 1999: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 1999"
+},
+{
+"type": "audit",
+"t": 1792912859.4687755,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2000 to 2281"
+},
+{
+"type": "step",
+"t": 1792912860.2476683,
+"scene": "checkout",
+"text": "payment.detected: 0.0015 ZEC for order-77",
+"status": "run",
+"txid": "24a137af9e3b5537dddb41745e7cc039c184de35c58f17d09ab2afaec2f75073",
+"confirmations": 1
+},
+{
+"type": "chain",
+"t": 1792912862.9903517,
+"height": 2282
+},
+{
+"type": "audit",
+"t": 1792912862.99648,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912863.0030613,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912863.0288367,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912863.0403209,
+"actor": "zecpy",
+"method": "GetLatestTreeState",
+"label": "public",
+"reason": "tree state at the tip",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912863.068446,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2282 to 2282"
+},
+{
+"type": "chain",
+"t": 1792912867.5489826,
+"height": 2283
+},
+{
+"type": "audit",
+"t": 1792912867.5546982,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912867.5599306,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912867.564178,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912867.5700257,
+"actor": "zecpy",
+"method": "GetLatestTreeState",
+"label": "public",
+"reason": "tree state at the tip",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912867.596692,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2283 to 2283"
+},
+{
+"type": "step",
+"t": 1792912867.6816473,
+"scene": "checkout",
+"text": "payment.confirmed: 0.0015 ZEC for order-77",
+"status": "ok",
+"txid": "24a137af9e3b5537dddb41745e7cc039c184de35c58f17d09ab2afaec2f75073",
+"confirmations": 3
+},
+{
+"type": "scene",
+"t": 1792912867.6817775,
+"scene": "checkout",
+"state": "done",
+"requests": 22,
+"identifying": 0
+},
+{
+"type": "scene",
+"t": 1792912867.6818335,
+"scene": "control",
+"state": "start"
+},
+{
+"type": "step",
+"t": 1792912867.6819603,
+"scene": "control",
+"text": "zcash-devtool creates a wallet",
+"status": "run"
+},
+{
+"type": "audit",
+"t": 1792912867.7084203,
+"actor": "devtool",
+"method": "GetLatestBlock",
+"label": "public",
+"reason": "chain tip, asked by every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912867.7356083,
+"actor": "devtool",
+"method": "GetTreeState",
+"label": "identifying",
+"reason": "tree state at 2182: an exact height tied to this wallet (its birthday, or where its last sync stopped)",
+"detail": "height 2182"
+},
+{
+"type": "step",
+"t": 1792912870.1139653,
+"scene": "control",
+"text": "zcash-devtool syncs",
+"status": "run"
+},
+{
+"type": "audit",
+"t": 1792912870.1338756,
+"actor": "devtool",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912870.1393,
+"actor": "devtool",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912870.144869,
+"actor": "devtool",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912870.1573567,
+"actor": "devtool",
+"method": "GetLatestBlock",
+"label": "public",
+"reason": "chain tip, asked by every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912870.1886692,
+"actor": "devtool",
+"method": "GetAddressUtxosStream",
+"label": "identifying",
+"reason": "queries transparent address UTXOs",
+"detail": "tmNJwTXfrXTVjuWzrujhdGj8ZbpnKWVvkE4, tmMzAfMq1dm8av1n22F9SPSEi8bCJVHYP14, tmGaFhwDmBCw4d8d1CLUTVft1oYC4mM8Vid, tmRXXvpjm"
+},
+{
+"type": "audit",
+"t": 1792912870.195748,
+"actor": "devtool",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2183 to 2283"
+},
+{
+"type": "audit",
+"t": 1792912870.3321126,
+"actor": "devtool",
+"method": "GetTreeState",
+"label": "identifying",
+"reason": "tree state at 2182: an exact height tied to this wallet (its birthday, or where its last sync stopped)",
+"detail": "height 2182"
+},
+{
+"type": "step",
+"t": 1792912870.4507291,
+"scene": "control",
+"text": "The server could identify this wallet from 3 requests",
+"status": "refused"
+},
+{
+"type": "scene",
+"t": 1792912870.4507926,
+"scene": "control",
+"state": "done",
+"requests": 9,
+"identifying": 3
+},
+{
+"type": "scene",
+"t": 1792912870.4508486,
+"scene": "memos",
+"state": "start"
+},
+{
+"type": "step",
+"t": 1792912870.48735,
+"scene": "memos",
+"text": "Eight other people pay each other in the same block as our customer",
+"status": "run"
+},
+{
+"type": "chain",
+"t": 1792912963.5420496,
+"height": 2284
+},
+{
+"type": "audit",
+"t": 1792912963.551517,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912963.5604525,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912963.5687504,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912963.5780592,
+"actor": "zecpy",
+"method": "GetLatestTreeState",
+"label": "public",
+"reason": "tree state at the tip",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912963.6224334,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2284 to 2284"
+},
+{
+"type": "step",
+"t": 1792912963.7495449,
+"scene": "memos",
+"text": "Payment found, but compact blocks carry no memo text",
+"status": "ok",
+"memo_pending": true
+},
+{
+"type": "step",
+"t": 1792912963.755744,
+"scene": "memos",
+"text": "fetch_memos(): 2 of the shop's payments need their memo; each goes out among 7 decoys",
+"status": "run"
+},
+{
+"type": "audit",
+"t": 1792912963.763396,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "3aadfe0b06bcb0d1d3877e02a86cdb282f3e6c172f6084b668c361dcdd659a4d"
+},
+{
+"type": "audit",
+"t": 1792912963.770994,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "5ce9c3c15ec9dc312615a9b628766156be3094cc738d74f4808c1c0bb80bf5da"
+},
+{
+"type": "audit",
+"t": 1792912963.7808323,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "177665a2d52fedd060716a9666b73dde3520b116a3e428851781bef3b8e08c9d"
+},
+{
+"type": "audit",
+"t": 1792912963.7938385,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "cf2a168e88c1fd105e9c5bcbed1a2ad8255b459a28f2e81bd54c33e87ecf07d8"
+},
+{
+"type": "audit",
+"t": 1792912963.8025415,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "aa85c50550cc0c59b708ea09a6248ac9437edbd660ad611722fe0e6cc1c3fbe3"
+},
+{
+"type": "audit",
+"t": 1792912963.8196864,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "acd40a4a7e963fb936b24951bee6f46e85c261a2aeba7df0880f30c508b54960"
+},
+{
+"type": "audit",
+"t": 1792912963.8272986,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "c611abd0946a865a435e5dd1826bb533e76a3dcc9a458860adf920fcaa68e2a4"
+},
+{
+"type": "audit",
+"t": 1792912963.8397837,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "24a137af9e3b5537dddb41745e7cc039c184de35c58f17d09ab2afaec2f75073"
+},
+{
+"type": "audit",
+"t": 1792912963.8864784,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "ab62a73e09d155ae0311bbcfb949ea828f21d400937878cdc22dd9d0168d19cc"
+},
+{
+"type": "audit",
+"t": 1792912963.893581,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "d37575a7efa7fad1a21be58d804bbfef15f19bb47e3d29728c30e071725a1daf"
+},
+{
+"type": "audit",
+"t": 1792912963.9077713,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "1f615719c4358097648ef71bc450bce7fa13aca4a58bb5d227ecd521ad6269ed"
+},
+{
+"type": "audit",
+"t": 1792912963.9195905,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "cd634727f6cb489602c3f1ffff5227489955f6a799e60a35be37b61b4b57d691"
+},
+{
+"type": "audit",
+"t": 1792912963.9266264,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "9304954a981a2bacd7d198542bf89d2628f311c2886632b4df9a00da7b1a9068"
+},
+{
+"type": "audit",
+"t": 1792912963.9338148,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "32e3fdb7aee3052ff9811379a259595d019afb47e6aa29d68ae86150a43dbedf"
+},
+{
+"type": "audit",
+"t": 1792912963.9473333,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "f376e6d913b247980931f08217df49bfe363f3d271950b131db32f445df92bc8"
+},
+{
+"type": "audit",
+"t": 1792912963.9539938,
+"actor": "zecpy",
+"method": "GetTransaction",
+"label": "identifying",
+"reason": "fetches one transaction by txid: the server learns it is yours",
+"detail": "fd01ef5b1562a0fd7598b425f5831540d41adc9ff3c6c4b8f335a4208e1c7872"
+},
+{
+"type": "secret",
+"t": 1792912964.0073972,
+"scene": "memos",
+"real_txids": [
+"ab62a73e09d155ae0311bbcfb949ea828f21d400937878cdc22dd9d0168d19cc",
+"24a137af9e3b5537dddb41745e7cc039c184de35c58f17d09ab2afaec2f75073"
+]
+},
+{
+"type": "step",
+"t": 1792912964.0238476,
+"scene": "memos",
+"text": "Memo decrypted locally: \u201cThanks! Order 78: two espressos, no sugar\u201d",
+"status": "ok",
+"fetched": 2,
+"waiting": 0
+},
+{
+"type": "scene",
+"t": 1792912964.0239787,
+"scene": "memos",
+"state": "done",
+"requests": 21,
+"identifying": 16,
+"decoys": 7
+},
+{
+"type": "scene",
+"t": 1792912964.0241008,
+"scene": "agent",
+"state": "start"
+},
+{
+"type": "audit",
+"t": 1792912964.0318644,
+"actor": "zecpy",
+"method": "GetLatestBlock",
+"label": "public",
+"reason": "chain tip, asked by every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792912964.0369906,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 1: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 1"
+},
+{
+"type": "chain",
+"t": 1792913015.5367563,
+"height": 2295
+},
+{
+"type": "audit",
+"t": 1792913015.5504487,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913015.5650568,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913015.5709183,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913015.5757868,
+"actor": "zecpy",
+"method": "GetLatestTreeState",
+"label": "public",
+"reason": "tree state at the tip",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913015.6431897,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 1: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 1"
+},
+{
+"type": "audit",
+"t": 1792913015.6490107,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2 to 999"
+},
+{
+"type": "audit",
+"t": 1792913017.2134037,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 999: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 999"
+},
+{
+"type": "audit",
+"t": 1792913017.231412,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 1000 to 1999"
+},
+{
+"type": "audit",
+"t": 1792913019.0273497,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 1999: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 1999"
+},
+{
+"type": "audit",
+"t": 1792913019.0377216,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2000 to 2295"
+},
+{
+"type": "step",
+"t": 1792913020.0790548,
+"scene": "agent",
+"text": "Agent wallet funded with 0.01 ZEC",
+"status": "ok",
+"balance": 1000000
+},
+{
+"type": "step",
+"t": 1792913020.1047628,
+"scene": "agent",
+"text": "The shop hands the agent a payment link",
+"status": "ok",
+"uri": "zcash:uregtest18ma7hyxcsh57hy3w27axku4ant2raxqkjk86lcv8c8unycyhaefral6gfhdx80mkg2v575dlax576q9apnymc2zsp3yc47rqjcmw78jh?amount=0.00125&message=api-call-4411"
+},
+{
+"type": "step",
+"t": 1792913020.1053839,
+"scene": "agent",
+"text": "Agent reads it: 0.00125 ZEC to one shielded address",
+"status": "ok"
+},
+{
+"type": "step",
+"t": 1792913020.105609,
+"scene": "agent",
+"text": "pay(max_zat=100_000) refused: the request asks for 125000 zatoshis, more than max_zat=100000; nothing was built",
+"status": "refused"
+},
+{
+"type": "step",
+"t": 1792913020.105631,
+"scene": "agent",
+"text": "Budget raised to 0.002 ZEC: pay(max_zat=200_000)",
+"status": "run"
+},
+{
+"type": "audit",
+"t": 1792913028.946665,
+"actor": "zecpy",
+"method": "SendTransaction",
+"label": "broadcast",
+"reason": "publishes a transaction",
+"detail": "9166 bytes"
+},
+{
+"type": "step",
+"t": 1792913029.1390524,
+"scene": "agent",
+"text": "Paid, proved and signed on the agent's machine",
+"status": "ok",
+"txid": "6c0541d9de69f7c6c7d18469c5b8eb63a6ea06f316130c2f214e7816f4e6a8d7"
+},
+{
+"type": "chain",
+"t": 1792913035.4363525,
+"height": 2296
+},
+{
+"type": "audit",
+"t": 1792913035.443544,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913035.4544678,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913035.466874,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913035.4770045,
+"actor": "zecpy",
+"method": "GetLatestTreeState",
+"label": "public",
+"reason": "tree state at the tip",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913035.5033872,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2285 to 2296"
+},
+{
+"type": "step",
+"t": 1792913035.6412547,
+"scene": "agent",
+"text": "payment.detected: 0.00125 ZEC for api-call-4411",
+"status": "run",
+"txid": "6c0541d9de69f7c6c7d18469c5b8eb63a6ea06f316130c2f214e7816f4e6a8d7",
+"confirmations": 1
+},
+{
+"type": "chain",
+"t": 1792913040.305642,
+"height": 2297
+},
+{
+"type": "audit",
+"t": 1792913040.3215706,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913040.3650815,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913040.3860114,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913040.4206982,
+"actor": "zecpy",
+"method": "GetLatestTreeState",
+"label": "public",
+"reason": "tree state at the tip",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913040.5238934,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2297 to 2297"
+},
+{
+"type": "chain",
+"t": 1792913046.081918,
+"height": 2298
+},
+{
+"type": "audit",
+"t": 1792913046.0873091,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913046.09534,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913046.1027758,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913046.1168945,
+"actor": "zecpy",
+"method": "GetLatestTreeState",
+"label": "public",
+"reason": "tree state at the tip",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913046.1646109,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2298 to 2298"
+},
+{
+"type": "step",
+"t": 1792913046.2246268,
+"scene": "agent",
+"text": "payment.confirmed: 0.00125 ZEC for api-call-4411",
+"status": "ok",
+"txid": "6c0541d9de69f7c6c7d18469c5b8eb63a6ea06f316130c2f214e7816f4e6a8d7",
+"confirmations": 3
+},
+{
+"type": "scene",
+"t": 1792913046.2247815,
+"scene": "agent",
+"state": "done",
+"requests": 28,
+"identifying": 0
+},
+{
+"type": "scene",
+"t": 1792913046.226231,
+"scene": "cold",
+"state": "start"
+},
+{
+"type": "step",
+"t": 1792913046.246734,
+"scene": "cold",
+"text": "Offline machine generates the seed; only a viewing key leaves it",
+"status": "ok"
+},
+{
+"type": "audit",
+"t": 1792913046.2544692,
+"actor": "zecpy",
+"method": "GetLatestBlock",
+"label": "public",
+"reason": "chain tip, asked by every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913046.260658,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 1: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 1"
+},
+{
+"type": "step",
+"t": 1792913048.0384169,
+"scene": "cold",
+"text": "Server imports the viewing key. can_send = False",
+"status": "ok"
+},
+{
+"type": "chain",
+"t": 1792913093.4591901,
+"height": 2309
+},
+{
+"type": "audit",
+"t": 1792913093.4718287,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913093.4867322,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913093.4987504,
+"actor": "zecpy",
+"method": "GetSubtreeRoots",
+"label": "public",
+"reason": "note commitment subtree roots, the same for every wallet",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913093.5067322,
+"actor": "zecpy",
+"method": "GetLatestTreeState",
+"label": "public",
+"reason": "tree state at the tip",
+"detail": ""
+},
+{
+"type": "audit",
+"t": 1792913093.5443635,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 1: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 1"
+},
+{
+"type": "audit",
+"t": 1792913093.5606856,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2 to 999"
+},
+{
+"type": "audit",
+"t": 1792913095.498078,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 999: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 999"
+},
+{
+"type": "audit",
+"t": 1792913095.5107777,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 1000 to 1999"
+},
+{
+"type": "audit",
+"t": 1792913097.548467,
+"actor": "zecpy",
+"method": "GetTreeState",
+"label": "coarse",
+"reason": "tree state at 1999: a 1000-block boundary every wallet crossing it asks for",
+"detail": "height 1999"
+},
+{
+"type": "audit",
+"t": 1792913097.5700607,
+"actor": "zecpy",
+"method": "GetBlockRange",
+"label": "public",
+"reason": "a range of compact blocks; every syncing wallet downloads them all",
+"detail": "blocks 2000 to 2309"
+},
+{
+"type": "step",
+"t": 1792913098.6497173,
+"scene": "cold",
+"text": "Server sees 0.01 ZEC it cannot spend",
+"status": "ok"
+},
+{
+"type": "step",
+"t": 1792913098.6498525,
+"scene": "cold",
+"text": "Server builds and proves a refund as an unsigned PCZT",
+"status": "run"
+},
+{
+"type": "step",
+"t": 1792913109.5638366,
+"scene": "cold",
+"text": "Signer checks it against its own key before signing",
+"status": "ok",
+"summary": "Spends   0.01000000 ZEC from this wallet\n  PAY          0.00200000 ZEC  to uregtest1md3h7svu96ajyuumzr0m6rk7qsdtydwgev3kxwsmh3667slle2kpvp2agmjgccqnuj03ag54ntpdtjzwjet36p5f9scmzl009wmj2hefzuvwa2htjjkd865zhyrvs48k923grykfhr64pumg5am2ed0xaxea6ze4d06wujnygyvlgr8k (ironwood)\n  change       0.00790000 ZEC  back to this wallet (ironwood)\nLeaving  0.00200000 ZEC  plus fee 0.00010000 ZEC"
+},
+{
+"type": "audit",
+"t": 1792913112.6043005,
+"actor": "zecpy",
+"method": "SendTransaction",
+"label": "broadcast",
+"reason": "publishes a transaction",
+"detail": "9166 bytes"
+},
+{
+"type": "chain",
+"t": 1792913118.354432,
+"height": 2310
+},
+{
+"type": "step",
+"t": 1792913118.3545241,
+"scene": "cold",
+"text": "Signed offline, broadcast by the server",
+"status": "ok",
+"txid": "b8af72920184cc221bbe748f41265ee376dcbbedeb9695f6fd23bc5bea8ff636"
+},
+{
+"type": "scene",
+"t": 1792913118.354644,
+"scene": "cold",
+"state": "done",
+"requests": 13,
+"identifying": 0
+}
+]

@@ -6,3 +6,4 @@ runs/
 *.db
 .env
 *.age
+.taste-skill/

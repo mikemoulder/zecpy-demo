@@ -160,9 +160,14 @@ async def memos(stage: Stage) -> None:
     [tx] = [t for t in shop.transactions() if any(o.address == address for o in t.outputs)]
     scene.step("Payment found, but compact blocks carry no memo text", memo_pending=tx.memo_pending)
 
-    scene.step("fetch_memos(): the real fetch goes out among 7 decoys", status="run")
+    ours = [t.txid for t in shop.transactions() if t.memo_pending]
+    scene.step(
+        f"fetch_memos(): {len(ours)} of the shop's payments need their memo; each goes out among 7 decoys",
+        status="run",
+    )
     report = await shop.fetch_memos(decoys=7, max_delay=0)
-    stage.hub.publish("secret", scene="memos", real_txid=tx.txid)
+    # Known only to this page: which fetched transactions were the wallet's own.
+    stage.hub.publish("secret", scene="memos", real_txids=ours)
     fetched = shop.transaction(tx.txid).outputs
     text = next((o.memo for o in fetched if o.memo), None)
     scene.step(

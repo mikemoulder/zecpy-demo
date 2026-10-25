@@ -35,8 +35,9 @@ async def test_zecpy_scene_reveals_nothing_identifying_in_the_clear(stage, name)
         # The memo fetch is the one identifying request type, and only among decoys.
         fetches = [e for e in _events(stage, "audit", actor="zecpy") if e["method"] == "GetTransaction"]
         [secret] = _events(stage, "secret", scene="memos")
-        assert len(fetches) == 8 and secret["real_txid"] in {e["detail"] for e in fetches}
-        assert done["identifying"] == 8
+        ours = secret["real_txids"]
+        assert ours and len(fetches) == 8 * len(ours) == done["identifying"]
+        assert set(ours) <= {e["detail"] for e in fetches}
     else:
         assert done["identifying"] == 0, _events(stage, "audit", actor="zecpy")
 
