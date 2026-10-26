@@ -82,6 +82,21 @@ button { font: inherit; color: inherit; }
 .ghost:hover:not(:disabled) { border-color: #5a5a60; }
 .ghost:active:not(:disabled) { transform: translateY(1px); }
 .ghost:disabled { color: var(--muted); cursor: default; }
+.primary {
+  height: var(--control-height);
+  padding: 0 16px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-control);
+  background: var(--accent);
+  color: #141416;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color .15s, color .15s;
+}
+.primary:hover { background: transparent; color: var(--accent); }
+.primary:active { transform: translateY(1px); }
+.primary[hidden], .notice[hidden] { display: none; }
 
 /* Canvas */
 .canvas { padding: 28px var(--pad) var(--pad); }
@@ -89,6 +104,9 @@ button { font: inherit; color: inherit; }
 h1 { font-size: var(--fs-title); line-height: 32px; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
 .finding { margin: 6px 0 0; font-size: 15px; color: var(--text); max-width: 1100px; }
 .finding .bad { color: var(--negative); }
+.notice { margin: 6px 0 0; font-size: var(--fs-small); color: var(--muted); max-width: 1100px; }
+.notice a { color: var(--text); text-underline-offset: 3px; }
+.notice a:hover { color: var(--accent); }
 
 .grid { display: grid; grid-template-columns: 448px minmax(0, 1fr); gap: var(--gap); align-items: start; }
 .col-left, .col-right { display: grid; gap: var(--gap); min-width: 0; }
@@ -235,4 +253,11 @@ h2 { font-size: var(--fs-section); font-weight: 600; margin: 0; line-height: 24p
   .ledger td.detail { grid-column: 1 / -1; grid-row: 3; }
   .ledger td.label-cell { grid-column: 2; grid-row: 1; text-align: right; }
   .ghost { min-height: 44px; }
+}
+
+/* The hosted replay adds a button to the bar; on a phone the bar wraps instead of clipping. */
+@media (max-width: 600px) {
+  .bar { height: auto; min-height: 48px; padding-block: 8px; flex-wrap: wrap; row-gap: 8px; }
+  .conn { display: none; }
+  #run-all { margin-left: auto; }
 }

@@ -4,6 +4,10 @@ A local page that runs [ZecPy](https://github.com/xerodahdev/zecpy) through five
 scenes on a real regtest chain, and shows beside them every request the light server
 receives, as it arrives. It is what the ZecPy demo video is recorded from.
 
+**Try the recorded run in a browser: https://zecpy-live.pages.dev.** Press Run on a scene,
+or Run all; it replays this page's recorded run with its original timing. To run every
+scene live on your own chain, see [Run it](#run-it).
+
 ![ZecPy Live at 1920x1080 after all five scenes](assets/zecpy-live.png)
 
 ## What each scene shows

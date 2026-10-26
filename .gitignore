@@ -7,3 +7,4 @@ runs/
 .env
 *.age
 .taste-skill/
+site-dist/

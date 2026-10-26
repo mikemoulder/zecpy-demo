@@ -1,5 +1,6 @@
 // ZecPy Live: renders the demo's event stream. Live from /events, or with ?replay from the
-// recorded run in replay.json (?replay=instant shows it all at once).
+// recorded run in replay.json (?replay=instant shows it all at once). A hosted copy (meta
+// zecpy-mode=replay) waits for Run: each scene's button replays that scene as recorded.
 (() => {
   const SCENES = [
     { id: "checkout", name: "Checkout", desc: "A shop invoices 0.0015 ZEC and sees it paid" },
@@ -55,7 +56,7 @@
       li.append(st);
       const run = el("button", "ghost", info.state === "done" ? "Run again" : "Run");
       run.type = "button";
-      run.disabled = state.running || !state.live;
+      run.disabled = state.running || !(state.live || REPLAY);
       run.addEventListener("click", () => start(s.id));
       li.append(run);
       return li;
@@ -63,6 +64,7 @@
   }
 
   async function start(id) {
+    if (REPLAY) return play(id);
     state.running = true;
     renderScenes();
     try {
@@ -258,7 +260,49 @@
 
   // Sources
   const params = new URLSearchParams(location.search);
-  if (params.has("replay")) {
+  const HOSTED = document.querySelector('meta[name="zecpy-mode"]')?.content === "replay";
+  const REPLAY = HOSTED || params.has("replay");
+  let recording = null;
+  const load = () => (recording ??= fetch("/static/replay.json").then((r) => r.json()));
+
+  // Plays recorded events with their original pacing (gaps capped at 600 ms).
+  async function playEvents(events) {
+    let prev = events[0]?.t;
+    for (const e of events) {
+      await new Promise((ok) => setTimeout(ok, Math.min(600, Math.max(0, (e.t - prev) * 1000))));
+      prev = e.t;
+      handle(e, false);
+    }
+  }
+  // One scene: from its start to its end, after the chain height it began at.
+  async function play(id) {
+    if (state.running) return;
+    state.running = true;
+    renderScenes();
+    try {
+      const events = await load();
+      const from = events.findIndex((e) => e.type === "scene" && e.scene === id && e.state === "start");
+      const to = events.findIndex((e, i) => i > from && e.type === "scene" && e.scene === id && e.state !== "start");
+      const chain = events.slice(0, from).filter((e) => e.type === "chain").pop();
+      if (chain) handle(chain, false);
+      await playEvents(events.slice(from, to + 1));
+    } finally {
+      state.running = false;
+      renderScenes();
+    }
+  }
+  async function playAll() {
+    if (state.running) return;
+    handle({ type: "reset" });
+    for (const s of SCENES) await play(s.id);
+  }
+  $("run-all")?.addEventListener("click", playAll);
+  if (REPLAY) { $("run-all").hidden = false; $("notice").hidden = false; }
+
+  if (HOSTED && !params.has("replay")) {
+    $("conn").textContent = "Recorded run";
+    $("finding").textContent = "Press Run on a scene, or Run all. A recorded run of real ZecPy on a local chain: every request the server received, as it arrived.";
+  } else if (params.has("replay")) {
     $("conn").textContent = "Replay of a recorded run";
     fetch("/static/replay.json").then((r) => r.json()).then(async (events) => {
       if (params.get("replay") === "instant") {
