@@ -6,5 +6,5 @@ the design-taste-frontend app rules (style data-terminal, seed 617959318, gold a
 
 - Run: `source ../zec/.venv/bin/activate && uvicorn demo.server:app --port 8077`
 - Test: `pytest -q` (needs devnet up). Check the page: `inspect.mjs --app "http://127.0.0.1:8077/?replay=instant"`
-- Commit as xerodahdev <xero.dev.ai@gmail.com>, HTTPS remote, no AI attribution, no em dashes.
+- Commit as mikemoulder <dayoife321@gmail.com>, HTTPS remote, no AI attribution, no em dashes.
 - Never claim the page shows Tor: the proxies are on loopback.

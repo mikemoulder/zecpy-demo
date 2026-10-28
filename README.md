@@ -10,16 +10,16 @@
 
 <p align="center">
   <a href="https://zecpy-live.pages.dev"><b>Open ZecPy Live</b></a> ·
-  <a href="https://github.com/xerodahdev/zecpy">ZecPy SDK</a> ·
+  <a href="https://github.com/mikemoulder/zecpy">ZecPy SDK</a> ·
   <a href="https://zecpy.pages.dev">Website and docs</a> ·
-  <a href="https://github.com/xerodahdev/zecpy/blob/main/docs/privacy-report.md">Privacy report</a> ·
-  <a href="https://github.com/xerodahdev/zecpy/blob/main/docs/testnet-run.md">Testnet run</a>
+  <a href="https://github.com/mikemoulder/zecpy/blob/main/docs/privacy-report.md">Privacy report</a> ·
+  <a href="https://github.com/mikemoulder/zecpy/blob/main/docs/testnet-run.md">Testnet run</a>
 </p>
 
 ---
 
 **ZecPy Live shows the one thing a privacy claim usually hides: what the server actually
-sees.** It runs [ZecPy](https://github.com/xerodahdev/zecpy), a Python SDK for shielded
+sees.** It runs [ZecPy](https://github.com/mikemoulder/zecpy), a Python SDK for shielded
 Zcash, through five real scenarios, and beside them prints every request the light server
 receives, the moment it arrives, labelled by what it gives away.
 
@@ -71,12 +71,12 @@ these same scenes.
 
 ### Run it live
 
-The live page needs the [ZecPy SDK](https://github.com/xerodahdev/zecpy) checked out next to
+The live page needs the [ZecPy SDK](https://github.com/mikemoulder/zecpy) checked out next to
 this repo (`../zec`, or set `ZEC_REPO`) with its devnet running. The devnet README lists the
 binaries (zebrad 7.0.0, lightwalletd 0.6.0).
 
 ```bash
-git clone https://github.com/xerodahdev/zecpy ../zec
+git clone https://github.com/mikemoulder/zecpy ../zec
 cd ../zec && uv venv .venv && . .venv/bin/activate && uv pip install -e '.[dev,examples]'
 devnet/up.sh <a uregtest1... address for block rewards> && cd -
 uvicorn demo.server:app --port 8077
@@ -112,7 +112,7 @@ content="replay">`), built and deployed by [`scripts/deploy_site.sh`](scripts/de
 - **The audit sees content, not the network path.** The proxies sit on loopback, so these
   runs use no Tor. In production ZecPy reaches remote servers over Tor, and `fetch_memos()`
   refuses to run without it. The same audit was also run against public testnet over Tor:
-  [the testnet run](https://github.com/xerodahdev/zecpy/blob/main/docs/testnet-run.md).
+  [the testnet run](https://github.com/mikemoulder/zecpy/blob/main/docs/testnet-run.md).
 - **The memo fetch is counted, not hidden.** Every `GetTransaction` is a request that names
   a transaction. The page shows ZecPy's default path and its opt-in memo fetch as separate
   figures, and labels each memo-fetch row "1 of 8, hidden".
@@ -129,12 +129,12 @@ pytest -q        # runs every scene against devnet and checks its privacy claims
 
 | Repository | What it is |
 |---|---|
-| [**zecpy**](https://github.com/xerodahdev/zecpy) | The Python SDK: `pip install zecpy` |
-| [**zecpy-site**](https://github.com/xerodahdev/zecpy-site) | The website and docs at [zecpy.pages.dev](https://zecpy.pages.dev) |
+| [**zecpy**](https://github.com/mikemoulder/zecpy) | The Python SDK: `pip install zecpy` |
+| [**zecpy-site**](https://github.com/mikemoulder/zecpy-site) | The website and docs at [zecpy.pages.dev](https://zecpy.pages.dev) |
 | **zecpy-demo** | This repository: ZecPy Live |
 
-Contributions follow the SDK's [contributing guide](https://github.com/xerodahdev/zecpy/blob/main/CONTRIBUTING.md);
-leaks and vulnerabilities go through its [security policy](https://github.com/xerodahdev/zecpy/blob/main/SECURITY.md).
+Contributions follow the SDK's [contributing guide](https://github.com/mikemoulder/zecpy/blob/main/CONTRIBUTING.md);
+leaks and vulnerabilities go through its [security policy](https://github.com/mikemoulder/zecpy/blob/main/SECURITY.md).
 
 ## License
 
